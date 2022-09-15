@@ -1,4 +1,4 @@
-ARG LATEX_IMAGE_TAG=latest
+ARG LATEX_IMAGE_TAG=latest-ubuntu
 FROM pandoc/latex:$LATEX_IMAGE_TAG
 
 RUN tlmgr list
@@ -30,4 +30,10 @@ RUN tlmgr update --self && \
     background \
     everypage \
     xurl \
-    epstopdf
+    epstopdf \
+    tcolorbox \
+    environ
+
+RUN apt-get update
+RUN apt-get install -yy python3 python3-pip
+RUN pip3 install pandoc-latex-environment
