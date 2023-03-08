@@ -34,7 +34,8 @@ RUN tlmgr update --self && \
     tcolorbox \
     environ \
     hardwrap \
-    pdfpages
+    pdfpages \
+    catchfile
 
 RUN apt-get update
 RUN apt-get install -yy python3 python3-pip python3-virtualenv
