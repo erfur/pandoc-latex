@@ -32,15 +32,13 @@ RUN tlmgr update --self && \
     xurl \
     epstopdf \
     tcolorbox \
-    environ \
     hardwrap \
-    pdfpages \
     catchfile \
     ctex \
-    tcolorbox \
     environ \
     pdfpages
 
+RUN apk add --update ttf-dejavu font-isas-misc ttf-droid ttf-droid-nonlatin fontconfig && rm -rf /var/cache/apk/*
 RUN apt-get update
 RUN apt-get install -yy python3 python3-pip python3-virtualenv
 RUN virtualenv /venv
